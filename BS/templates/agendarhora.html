@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+    {% block contenido %}
+
+
+            <section class="form-re" >
+                <article>
+                    <h4>Agenda tu hora</h4>
+                    <form action="" method="">
+
+                        <input class="controls" type="date" name="" id="" required="">
+                        <p>Hora inicio</p>
+                        <input class="controls" type="time" name="" id=""required="">
+                        <p>Hora Termino</p>
+                        <input class="controls" type="time" name="" id=""required="">
+
+                       <center>
+                         <p>Selecciona una bicicleta</p>
+                        <select class="op" name="" id="">
+                            <option value="" disabled selected>Qué Tipo de Bicicleta Quieres</option>
+                            <optgroup label="Disponibles en nuestra Sucursal">
+                                <option value="">Bicicletas de Ruta</option>
+                                <option value="">Bicicletas para Ruta de Barra Plana</option>
+                                <option value="">Bicicletas de Gravilla o Gravel</option>
+                                <option value="">Bicicletas Urbanas</option>
+                                <option value="">Bicicletas Plegables</option>
+                            </optgroup>
+
+
+                        </center>
+                        <input class="botons" type="submit" value="Agendar">
+                        <p>Estoy de acuerdo con <a id="a_form" href="{% url 'INFO' %}">Terminos y condiciones</a> </p>
+                        <p>Listo para arrendar tubicicleta {{user.first_name}}</p>
+                    </form>
+
+                </article>
+
+
+            </section>
+
+    {% endblock contenido %}
+
+
+</body>
+</html>

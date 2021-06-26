@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'dist/css/lightbox.css' %}"> {% endblock css %} {% block contenido %}
+
+
+
+<section id="bienvenida">
+    <h2>Bienvenido {{user.first_name}} a nuestro Club de MasterBike</h2>
+    <H4>
+        Disfrutamos las rutas, y ofrecemos nuestros servicios desde el corazon.
+    </H4>
+
+    <br><br>
+
+    <h3>Servicios</h3>
+    <p>Servicio de Arriendo de bicicletas.</p>
+    <p>Asesoría, arreglo de barba, crema de afeitar, navaja más after shave y aceite.</p>
+    <p>Aplicación de toalla caliente y limpieza facial.</p>
+
+
+</section>
+
+
+
+
+<section id="info">
+    <h3>Nuestros Servicios </h3>
+
+
+
+
+    </div>
+
+
+    <section id="servicios">
+
+        <div class="info-portada">
+          <p>Arriendo de bicicletas</p>
+            <a href="{% url 'TIPOBICI' %}">
+                <img src="{% static 'img/servicios/serv0.jpeg' %}" alt=""> </a>
+        </div>
+
+
+        <div class="info-portada">
+          <p>Reparacion de bicicletas</p>
+            <a href="">
+                <img src="{% static 'img/servicios/serv2.jpg' %}" alt="">
+            </a>
+        </div>
+
+        <div class="info-portada">
+          <p>Nuestra tienda</p>
+            <a href="{% url 'TIENDA' %}">
+                <img src="{% static 'img/servicios/serv3.jpg' %}" alt="">
+            </a>
+        </div>
+
+    </section>
+
+
+</section>
+
+<section id="Ultimos_prod">
+    <h3>Ultimos productos </h3>
+
+    <div class="contenido-tienda">
+        {% for reg in productos %}
+
+        <a href={{reg.nombre}}>
+            <img class="prod" src="{{reg.foto.url}}" alt="">
+            <h3>{{reg.nombre}}</h3>
+
+
+        </a>
+
+        {% endfor %}
+    </div>
+
+</section>
+
+
+
+
+{% endblock contenido %} {% block js %}
+<script src="{% static 'dist/js/lightbox-plus-jquery.js' %}"></script>
+{% endblock js %}
